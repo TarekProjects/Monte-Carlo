@@ -14,19 +14,19 @@ class BlackScholes {
 		~BlackScholes(void){}
 
 		BS BSPrice(	double S0,
-						double K, 
-						double r,
-						double q,
-						double v, 
-						double T,
-						string PutCall)
-        {
+				double K, 
+				double r,
+				double q,
+				double v, 
+				double T,
+				string PutCall)
+        	{
 
 			double d1 = (log(S0/K) + (r+pow(v,2)/2)*T)/(v*sqrt(T));
-            double d2 = d1 - v*sqrt(T);
-            double D1 = normal::N(d1);
-            double D2 = normal::N(d2);
-            double phi = exp(-pow(d1,2)/2)/sqrt(2*M_PI);
+            		double d2 = d1 - v*sqrt(T);
+            		double D1 = normal::N(d1);
+            		double D2 = normal::N(d2);
+            		double phi = exp(-pow(d1,2)/2)/sqrt(2*M_PI);
 			
 			if (PutCall=="Call") {
 				double value = D1*S0 - D2*K*exp(-r*T);
@@ -39,7 +39,7 @@ class BlackScholes {
 				double speed =  (-phi * ( (d1/(v*sqrt(T))) + 1 )) / (pow(S0, 2)*v*sqrt(T));
 				double vanna =  phi*d2/v;
 				double vomma =  S0*phi*sqrt(T)*d1*d2/v;
-                return BS{value, delta, gamma, vega, theta, rho, vanna, vomma, speed, zomma};
+                		return BS{value, delta, gamma, vega, theta, rho, vanna, vomma, speed, zomma};
 				//return value;
 			}
 			
@@ -54,7 +54,7 @@ class BlackScholes {
 				double speed =  (-phi * ( (d1/(v*sqrt(T))) + 1 )) / (pow(S0, 2)*v*sqrt(T));
 				double vanna =  phi*d2/v;
 				double vomma =  S0*phi*sqrt(T)*d1*d2/v;
-                return BS{value, delta, gamma, vega, theta, rho, vanna, vomma, speed, zomma};
+                		return BS{value, delta, gamma, vega, theta, rho, vanna, vomma, speed, zomma};
 				//return value;
 			}
         }
