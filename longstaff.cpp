@@ -20,14 +20,14 @@ class Longstaff {
 		~Longstaff(void){}
 		
         vector<double> AmericanLongstaff(	double S0,
-											double K, 
-											double r,
-											double q,
-											double v, 
-											double T,
-											int NT, 
-											int NS,
-											string PutCall) {
+						double K, 
+						double r,
+						double q,
+						double v, 
+						double T,
+						int NT, 
+						int NS,
+						string PutCall) {
             
             CMatrixOperations Mat;
 			Normal normal;
@@ -157,6 +157,6 @@ class Longstaff {
             output[0] = EuroPrice;
             output[1] = AmerPrice;
             return output;
-			return AmerPrice;
+	    return AmerPrice;
         }
 };
