@@ -26,10 +26,10 @@ class BlackScholes {
 		~BlackScholes(void){}
 
 		BS BSPrice(	double S0,
-						double K, 
-						double r,
-						double q,
-						double v, 
-						double T,
-						string PutCall)
+				double K, 
+				double r,
+				double q,
+				double v, 
+				double T,
+				string PutCall);
 };
